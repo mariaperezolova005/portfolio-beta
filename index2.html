@@ -2,13 +2,11 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Maria Perezolova</title>
     <style>
-        /* ========== ПОДКЛЮЧАЕМ ШРИФТЫ ========== */
         @import url('https://fonts.googleapis.com/css2?family=Lakki+Reddy&family=Love+Ya+Like+A+Sister&family=Life+Savers:wght@400;700;800&display=swap');
 
-        /* ========== СБРОС СТИЛЕЙ ========== */
         * {
             margin: 0;
             padding: 0;
@@ -17,13 +15,11 @@
 
         body {
             min-height: 100vh;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMyNDM2NUYiLz48L3N2Zz4='), #24365F;
-            background-size: cover;
+            background: #24365F;
             font-family: 'Lakki Reddy', cursive;
             overflow-x: hidden;
         }
 
-        /* ========== ОСНОВНОЙ КОНТЕЙНЕР ========== */
         .portfolio-container {
             position: relative;
             width: 100%;
@@ -31,39 +27,41 @@
             margin: 0 auto;
             background: #24365F;
             min-height: 100vh;
-            overflow-x: hidden;
         }
 
-        /* ========== LOGO ========== */
         .logo {
             position: absolute;
             left: 470px;
             top: 44px;
-            width: 218px;
-            height: 61px;
             font-family: 'Love Ya Like A Sister', cursive;
             font-size: 96px;
-            line-height: 120px;
-            text-align: center;
             color: #FFFA67;
             z-index: 20;
         }
 
-        /* ========== НАВИГАЦИЯ (КНОПКИ) ========== */
-        .nav-home {
+        /* Навигация */
+        .nav-home, .nav-portfolio, .nav-about, .nav-contacts {
             position: absolute;
             width: 220px;
             height: 70px;
-            left: 431px;
             top: 268px;
             background: #616FD0;
             border-radius: 30px;
             cursor: pointer;
-            transition: transform 0.2s, background 0.2s;
+            transition: transform 0.2s;
             z-index: 10;
         }
-        .nav-home:hover { background: #7a88e8; transform: scale(1.02); }
-        .nav-home a {
+        .nav-home { left: 431px; background: #616FD0; }
+        .nav-portfolio { left: 671px; background: #24318E; }
+        .nav-about { left: 911px; background: #616FD0; }
+        .nav-contacts { left: 1151px; background: #616FD0; }
+        
+        .nav-home:hover, .nav-portfolio:hover, .nav-about:hover, .nav-contacts:hover {
+            transform: scale(1.02);
+            background: #7a88e8;
+        }
+        
+        .nav-home a, .nav-portfolio a, .nav-about a, .nav-contacts a {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -76,429 +74,102 @@
             text-decoration: none;
         }
 
-        .nav-portfolio {
+        /* Карточки */
+        .card-1, .card-2, .card-3, .card-4 {
             position: absolute;
-            width: 220px;
-            height: 70px;
-            left: 671px;
-            top: 268px;
-            background: #24318E;
-            border-radius: 30px;
+            width: 452.48px;
+            height: 302.36px;
+            border-radius: 90px;
             cursor: pointer;
-            transition: transform 0.2s, background 0.2s;
-            z-index: 10;
-        }
-        .nav-portfolio:hover { background: #3a4bb0; transform: scale(1.02); }
-        .nav-portfolio a {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+            transition: transform 0.3s;
+            z-index: 15;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Lakki Reddy', cursive;
-            font-size: 36px;
-            color: #FFFA67;
-            text-decoration: none;
+            font-size: 48px;
+            background-size: cover;
+            background-position: center;
         }
+        .card-1 { left: 497px; top: 355.94px; background: #3a4b7a; color: #FFFA67; text-shadow: 0 4px 4px #FFFA67; }
+        .card-2 { left: 965.83px; top: 353px; background: #4a5b8a; color: #FFFA67; }
+        .card-3 { left: 498.93px; top: 675.92px; background: #5a6b9a; color: #28007E; text-shadow: 0 4px 4px #488CCB; }
+        .card-4 { left: 967.76px; top: 672.98px; background: #6a7baa; color: #28007E; }
+        
+        .card-1:hover, .card-2:hover, .card-3:hover, .card-4:hover { transform: scale(1.02); }
+        
+        .card-1::before { content: "Theathre"; }
+        .card-2::before { content: "Stage collections"; font-size: 38px; text-align: center; }
+        .card-3::before { content: "Graphics"; }
+        .card-4::before { content: "Accessories"; }
 
-        .nav-about {
-            position: absolute;
-            width: 220px;
-            height: 70px;
-            left: 911px;
-            top: 268px;
-            background: #616FD0;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: transform 0.2s, background 0.2s;
-            z-index: 10;
-        }
-        .nav-about:hover { background: #7a88e8; transform: scale(1.02); }
-        .nav-about a {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Lakki Reddy', cursive;
-            font-size:
-36px;
-            color: #FFFA67;
-            text-decoration: none;
-        }
-
-        .nav-contacts {
-            position: absolute;
-            width: 220px;
-            height: 70px;
-            left: 1151px;
-            top: 268px;
-            background: #616FD0;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: transform 0.2s, background 0.2s;
-            z-index: 10;
-        }
-        .nav-contacts:hover { background: #7a88e8; transform: scale(1.02); }
-        .nav-contacts a {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Lakki Reddy', cursive;
-            font-size: 36px;
-            color: #FFFA67;
-            text-decoration: none;
-        }
-
-        /* ========== БЛУР ФОН ПОД НАВИГАЦИЕЙ ========== */
-        .nav-blur {
-            position: absolute;
-            width: 1100px;
-            height: 84px;
-            left: 410px;
-            top: 163px;
-            background: rgba(0,0,0,0.3);
-            filter: blur(3.5px);
-            border-radius: 20px;
-            z-index: 5;
-        }
-
-        /* ========== КАРТОЧКИ РАБОТ (4 штуки) ========== */
-        .card-1 {
-            position: absolute;
-            width: 452.48px;
-            height: 302.36px;
-            left: 497px;
-            top: 355.94px;
-            background: linear-gradient(135deg, #3a4b7a, #1a2a4a);
-            border-radius: 90px;
-            transform: matrix(1, -0.01, 0.01, 1, 0, 0);
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            z-index: 15;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255,250,103,0.5);
-            font-size: 24px;
-            text-align: center;
-        }
-        .card-1:hover { transform: matrix(1, -0.01, 0.01, 1, 0, 0) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-        .card-1::before { content: "Theathre"; position: absolute; font-family: 'Lakki Reddy', cursive; font-size: 48px; color: #FFFA67; text-shadow: 0 4px 4px #FFFA67; z-index: 2; }
-
-        .card-2 {
-            position: absolute;
-            width: 452.48px;
-            height: 302.36px;
-            left: 965.83px;
-            top: 353px;
-            background: linear-gradient(135deg, #4a5b8a, #2a3a5a);
-            border-radius: 90px;
-            transform: matrix(1, -0.01, 0.01, 1, 0, 0);
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            z-index: 15;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .card-2:hover { transform: matrix(1, -0.01, 0.01, 1, 0, 0) scale(1.02); }
-        .card-2::before { content: "Stage collections"; position: absolute; font-family: 'Lakki Reddy', cursive; font-size: 38px; text-align: center; color: #FFFA67; z-index: 2; width: 80%; }
-
-        .card-3 {
-            position: absolute;
-            width: 452.48px;
-            height: 302.36px;
-            left: 498.93px;
-            top: 675.92px;
-            background: linear-gradient(135deg, #5a6b9a, #3a4a6a);
-            border-radius: 90px;
-            transform: matrix(1, -0.01, 0.01, 1, 0, 0);
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            z-index: 15;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .card-3:hover { transform: matrix(1, -0.01, 0.01, 1, 0, 0) scale(1.02); }
-        .card-3::before { content: "Graphics"; position: absolute; font-family: 'Lakki Reddy', cursive; font-size: 48px; color: #28007E; text-shadow: 0 4px 4px #488CCB; z-index: 2; }
-
-        .card-4 {
-            position: absolute;
-            width: 452.4
-8px;
-            height: 302.36px;
-            left: 967.76px;
-            top: 672.98px;
-            background: linear-gradient(135deg, #6a7baa, #4a5a7a);
-            border-radius: 90px;
-            transform: matrix(1, -0.01, 0.01, 1, 0, 0);
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            z-index: 15;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .card-4:hover { transform: matrix(1, -0.01, 0.01, 1, 0, 0) scale(1.02); }
-        .card-4::before { content: "Accessories"; position: absolute; font-family: 'Lakki Reddy', cursive; font-size: 48px; color: #28007E; z-index: 2; }
-
-        /* ========== НИЖНЯЯ СЕКЦИЯ С ИНФОРМАЦИЕЙ ========== */
-        .footer-blur-1 {
-            position: absolute;
-            width: 1040px;
-            height: 173px;
-            left: 425px;
-            top: 1027px;
-            background: #28007E;
-            filter: blur(10px);
-            z-index: 18;
-        }
-        .footer-blur-2 {
-            position: absolute;
-            width: 1297px;
-            height: 255px;
-            left: 321px;
-            top: 1008px;
-            background: rgba(17,20,48,0.8);
-            filter: blur(5px);
-            z-index: 17;
-        }
-        .footer-line {
-            position: absolute;
-            width: 1242px;
-            height: 0;
-            left: 343px;
-            top: 1038px;
-            border: 5px solid #616FD0;
-            z-index: 19;
-        }
+        /* Нижняя секция */
         .footer-text-left {
             position: absolute;
-            width: 198px;
-            left: 650px;
+            left: 600px;
             top: 1065px;
             font-family: 'Life Savers', serif;
             font-weight: 800;
             font-size: 20px;
-            line-height: 1.3;
             color: #616FD0;
             z-index: 20;
         }
         .footer-text-right {
             position: absolute;
-            width: 274px;
             left: 1000px;
             top: 1065px;
             font-family: 'Life Savers', serif;
             font-weight: 800;
             font-size: 20px;
-            line-height: 1.3;
             color: #616FD0;
             z-index: 20;
         }
 
-        /* ========== ИКОНКИ СОЦСЕТЕЙ (верх) ========== */
-        .social-instagram {
-            position: absolute;
-            width: 35px;
-            height: 36px;
-            left: 1354px;
-            top: 77px;
-            cursor: pointer;
-            z-index: 25;
-            transition: transform 0.2s;
-        }
-        .social-instagram:hover { transform: scale(1.1); }
-        .social-mail {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            left: 1397px;
-            top: 75px;
-            cursor: pointer;
-            z-index: 25;
-            transition: transform 0.2s;
-        }
-        .social-mail:hover { transform: scale(1.1); }
-        .social-youtube {
-            position: absolute;
-            width: 42px;
-            height: 40px;
-            left: 1445px;
-            top: 77px;
-            cursor: pointer;
-            z-index: 25;
-            transition: transform 0.2s;
-        }
-        .social-youtube:hover { transform: scale(1.1); }
-
-        /* ========== ДОП. ИКОНКИ В ФУТЕРЕ (Солнце, Луна, Почта) ========== */
-        .icon-sun {
-            position: absolute;
-            width: 44px;
-            height: 43px;
-            left: 1412px;
-            top: 1070px;
-            cursor: pointer;
-            z-index: 25;
-        }
-        .icon-moon {
-            position: absolute;
-            width: 45px;
-            height: 43px;
-            left: 1463px;
-            top: 1070px;
-            cursor: pointer;
-            z-index: 25;
-        }
-        .icon-mail-footer {
-            position: absolute;
-            width: 34px;
-            height: 28px;
-            left: 520px;
-            top: 1096px;
-            cursor: pointer;
-            z-index: 25;
-        }
-
-        /* ===
-======= АДАПТИВНОСТЬ ========== */
-        max-width: 1400px {
-            .logo { left: 30px; top: 20px; font-size: 60px; }
+        /* Адаптивность */
+        @media (max-width: 1400px) {
+            .logo { position: relative; left: auto; text-align: center; padding-top: 20px; font-size: 60px; }
             .nav-home, .nav-portfolio, .nav-about, .nav-contacts { position: relative; left: auto; top: auto; margin: 10px auto; width: 180px; height: 55px; }
             .nav-home a, .nav-portfolio a, .nav-about a, .nav-contacts a { font-size: 28px; }
-            .nav-blur { display: none; }
-            
-            .card-1, .card-2, .card-3, .card-4 { 
-                position: relative; left: auto; top: auto; 
-                transform: none; margin: 20px auto; width: 90%; max-width: 400px; 
-            }
+            .card-1, .card-2, .card-3, .card-4 { position: relative; left: auto; top: auto; margin: 20px auto; width: 90%; max-width: 400px; height: 250px; }
             .card-1::before, .card-2::before, .card-3::before, .card-4::before { font-size: 32px; text-align: center; }
-            
-            .footer-blur-1, .footer-blur-2, .footer-line { display: none; }
-            .footer-text-left, .footer-text-right { position: relative; left: auto; top: auto; margin: 20px; width: auto; text-align: center; }
-            
-            .social-instagram, .social-mail, .social-youtube { position: fixed; right: 10px; top: auto; bottom: 10px; left: auto; }
-            .social-instagram { bottom: 70px; }
-            .social-mail { bottom: 20px; }
-            .social-youtube { bottom: 120px; }
-            
-            .icon-sun, .icon-moon, .icon-mail-footer { display: none; }
-            
+            .footer-text-left, .footer-text-right { position: relative; left: auto; top: auto; margin: 20px; text-align: center; }
             .portfolio-container { display: flex; flex-direction: column; align-items: center; padding: 20px; }
-            .logo { position: relative; }
-            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 120px 0 20px; width: 100%; }
-            .cards { display: flex; flex-direction: column; align-items: center; width: 100%; }
-            footer { display: flex; flex-direction: column; align-items: center; margin: 40px 0; }
         }
 
-        max-width: 768px {
-            .logo { font-size: 48px; width: auto; }
+        @media (max-width: 768px) {
+            .logo { font-size: 48px; }
             .nav-home, .nav-portfolio, .nav-about, .nav-contacts { width: 140px; height: 45px; }
             .nav-home a, .nav-portfolio a, .nav-about a, .nav-contacts a { font-size: 22px; }
             .footer-text-left, .footer-text-right { font-size: 14px; }
-        }
-
-        /* Убираем наложение на маленьких экранах */
-        max-width: 1400px {
-            body { overflow-x: auto; }
-            .portfolio-container { position: relative; height: auto; min-height: 100vh; }
         }
     </style>
 </head>
 <body>
 <div class="portfolio-container">
-    <!-- ЛОГО -->
     <div class="logo">LOGO</div>
 
-    <!-- ИКОНКИ СОЦСЕТЕЙ ВВЕРХУ -->
-    <div class="social-instagram" onclick="window.open('https://instagram.com', '_blank')">
-        <svg width="35" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="2" width="20" height="20" rx="5" stroke="#FFFA67" stroke-width="3" fill="none"/>
-            <circle cx="12" cy="12" r="4" stroke="#FFFA67" stroke-width="3" fill="none"/>
-            <circle cx="17.5" cy="6.5" r="1.5" fill="#FFFA67"/>
-        </svg>
-    </div>
-    <div class="social-mail" onclick="window.location.href='mailto:maria@example.com'">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="4" width="20" height="16" rx="2" stroke="#FFFA67" stroke-width="3" fill="none"/>
-            <path d="M22 7L12 13L2 7" stroke="#FFFA67" stroke-width="3" fill="none"/>
-        </svg>
-    </div>
-    <div class="social-youtube" onclick="window.open('https://youtube.com', '_blank')">
-        <svg width="42" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.54 6.42C22.33 5.62 21.75 5.05 20.92 4.84C19.14 4.5 12 4.5 12 4.5C12 4.5 4.86 4.5 3.08 4.84C2.25 5.05 1.67 5.62 1.46 6.42C1.12 8.2 1.12 12 1.12 12C1.12 12 1.12 15.8 1.46 17.58C1.67 18.38 2.25 18.95 3.08 19.16C4.86 19.5 12 19.5 12 19.5C12 19.5 19.14 19.5 20.92 19.16C21.75 18.95 22.33 18.38 22.54 17.58C22.88 15.8 22.88 12 22.88 12C22.88 12 22.88 8.2 22.54 6.42Z" stroke="#FFFA67" stroke-width="3" fill="none"/>
-            <polygon points="9.75 8.5 9.75 15.5 15.5 12 9.75 8.5" fill="#FFFA67"/>
-        </svg>
-    </div>
-
-    <!-- НАВИГАЦИЯ -->
-    <div class="nav-blur"></div>
     <div class="nav-home"><a href="#">Home</a></div>
     <div class="nav-portfolio"><a href="#">Portfolio</a></div>
     <div class="nav-about"><a href="#">About me</a></div>
     <div class="nav-contacts"><a href="#">Contacts</a></div>
 
-    <!-- КАРТОЧКИ РАБОТ (КЛИКАБЕЛЬНЫ) -->
     <div class="card-1" onclick="alert('Theathre — скоро подробнее')"></div>
     <div class="card-2" onclick="alert('Stage collections — скоро подробнее')"></div>
     <div class="card-3" onclick="alert('Graphics — скоро подробнее')"></div>
     <div class="card-4" onclick="alert('Accessories — скоро подробнее')"></div>
 
-    <!-- НИЖНЯЯ СЕКЦИЯ -->
-    <div class="footer-blur-1"></div>
-    <div class="footer-blur-2"></div>
-    <div class="footer-line"></div>
-
     <div class="footer-text-left">
-        Types of work:
-
-        Fashion illustration
-
-        Digital graphic
-
+        Types of work:<br>
+        Fashion illustration<br>
+        Digital graphic<br>
         Suit tailoring
     </div>
     <div class="footer-text-right">
-        Use programs:
-
-        CorelDraw
-
-        Krita
-
-        ClipStudio
-
+        Use programs:<br>
+        CorelDraw<br>
+        Krita<br>
+        ClipStudio<br>
         Clo3D
-    </div>
-
-    <!-- ИКОНКИ В ФУТЕРЕ -->
-    <div class="icon-sun" onclick="alert('Светлая тема в разработке')">
-        <svg width="44" height="43" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="5" stroke="#616FD0" stroke-width="3" fill="none"/>
-            <path d="M12 2V4M12 20V22M4 12H2M6 6L4 4M18 18L20 20M22 12H20M18 6L20 4M6 18L4 20" stroke="#616FD0" stroke-width="3"/>
-        </svg>
-    </div>
-    <div class="icon-moon" onclick="alert('Тёмная тема уже активна')">
-        <svg width="45" height="43" viewBox="0 0 24 24" fill="none">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke="#616FD0" stroke-width="3" fill="none"/>
-        </svg>
-    </div>
-    <div class="icon-mail-footer" onclick="window.location.href='mailto:maria@example.com'">
-        <svg width="34" height="28" viewBox="0 0 24 24" fill="none">
-            <rect x="2" y="4" width="20" height="16" rx="2" stroke="#616FD0" stroke-width="4" fill="none"/>
-            <path d="M22 7L12 13L2 7" stroke="#616FD0" stroke-width="4" fill="none"/>
-        </svg>
     </div>
 </div>
 </body>
